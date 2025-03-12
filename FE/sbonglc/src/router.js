@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { ROUTERS } from "./utils/router";
 import HomePage from "./pages/user/homepages"
-import MasterLayout from "./pages/user/homepages/theme/masterLayout";
-import ProFile from "./pages/user/profile";
+import MasterLayout from "./pages/user/theme/masterLayout";
+import Order from "./pages/user/order";
+import Club from "./pages/user/club";
+import Contact from "./pages/user/contact"
 const renderUserRouter = () => {
     const UserRouters= [
         {
@@ -10,8 +12,16 @@ const renderUserRouter = () => {
             component: <HomePage/>
         },
         {
-            path: ROUTERS.USER.PROFILE,
-            component: <ProFile/>
+            path: ROUTERS.USER.ORDER,
+            component: <Order/>
+        },
+        {
+            path: ROUTERS.USER.CLUB,
+            component: <Club/>
+        },
+        {
+            path: ROUTERS.USER.CONTACT,
+            component: <Contact/>
         },
 
     ]
