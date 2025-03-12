@@ -33,6 +33,7 @@
   .header_login {
     flex: 0 0 20%;
     max-width: 20%;
+    
 
     ul {
       display: flex;
@@ -48,6 +49,15 @@
         background-color: aliceblue;
         transition: all 0.3s ease-in-out;
         font-size: 0.8rem;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          &:hover { 
+            color: red;
+            text-decoration: none;
+          }
+        }
       }
     }
   }

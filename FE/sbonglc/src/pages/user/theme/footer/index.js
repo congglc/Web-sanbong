@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import "./style.scss"
 import logo from "../../../../assets/user/chung/logo.png"
 import {

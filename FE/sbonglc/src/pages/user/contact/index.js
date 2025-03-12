@@ -1,10 +1,13 @@
-import { memo } from "react";
+import { memo ,useEffect} from "react";
 import "./style.scss";
 import { FaMapMarkerAlt, FaPhone, FaRegEnvelope } from "react-icons/fa";
 
 import banner from "../../../assets/user/contact/baner.png";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []); 
   return (
     <div className="contact-content">
       <div className="container">

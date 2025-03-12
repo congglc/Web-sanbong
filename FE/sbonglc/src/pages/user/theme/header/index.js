@@ -60,10 +60,10 @@ const Header = () => {
             <div className="header_login">
               <ul>
                 <li>
-                  <Link to="/login">Đăng nhập</Link>
+                  <Link to={ROUTERS.USER.SIGNIN}>Đăng nhập</Link>
                 </li>
                 <li>
-                  <Link to="/register">Đăng kí</Link>
+                  <Link to={ROUTERS.USER.SIGNUP}>Đăng kí</Link>
                 </li>
               </ul>
             </div>

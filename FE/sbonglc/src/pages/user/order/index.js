@@ -1,8 +1,10 @@
-import { memo } from "react";
+import { memo ,useEffect} from "react";
 import "./style.scss";
 import san_1 from "../../../assets/user/order/image.jpg";
 import san_2 from "../../../assets/user/order/image (2).png";
 import san_3 from "../../../assets/user/order/image (1).png";
+import { ROUTERS } from "utils/router";
+import { Link } from "react-router-dom";
 
 const Order = () => {
   // Example array of field data. Replace with your actual data source
@@ -13,6 +15,10 @@ const Order = () => {
     { id: 4, src: san_1, alt: "Sân 4", title: "Sân số 4", time: "90 phút", location: "Khu đô Nguyễn Trãi Hà Đông", manager: "0123456789" }, // Add more fields here!
     { id: 5, src: san_2, alt: "Sân 5", title: "Sân số 5", time: "90 phút", location: "Khu đô Nguyễn Trãi Hà Đông", manager: "0123456789" },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []); 
 
   return (
     <div className="order-content">
@@ -35,7 +41,9 @@ const Order = () => {
                 <li>1 quả bóng</li>
                 <li>2 xô nước <span className="info-icon">ℹ</span></li>
               </ul>
-              <button>Đặt ngay</button>
+              <Link to= {ROUTERS.USER.PAYMENT}>
+                <button>Đặt ngay</button>
+              </Link>
             </div>
 
             <div className="price-box special">
@@ -47,7 +55,10 @@ const Order = () => {
                 <li>2 xô nước <span className="info-icon">ℹ</span></li>
                 <li>áo pit</li>
               </ul>
-              <button>Đặt ngay</button>
+              <Link to= {ROUTERS.USER.PAYMENT}>
+                <button>Đặt ngay</button>
+              </Link>
+          
             </div>
 
             <div className="price-box">
@@ -55,7 +66,9 @@ const Order = () => {
               <p className="time-description">Thứ 7 và chủ nhật</p>
               <h2>100,000 <span>đ /ca</span></h2>
               <p className="extra-fee"><span className="info-icon">ℹ</span> Tăng thêm so với ngày thường.</p>
-              <button>Đặt ngay</button>
+              <Link to= {ROUTERS.USER.PAYMENT}>
+                <button>Đặt ngay</button>
+              </Link>
             </div>
           </div>
         </div>

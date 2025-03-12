@@ -1,8 +1,13 @@
-import { memo } from "react";
+import { memo ,useEffect } from "react";
 import "./style.scss";
 import sanbong from "../../../assets/user/hompages/view.png";
+import { Link } from "react-router-dom";
+import { ROUTERS } from "utils/router";
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []); 
   return (
     <div className="homepage-content">
       <section className="hero-section">
@@ -14,15 +19,18 @@ const HomePage = () => {
           </div>
           <div className="booking-box">
             <input type="text" placeholder="Nhập số điện thoại của bạn" />
-            <button>Đặt sân ngay</button>
+            <Link to={ROUTERS.USER.PAYMENT}> <button>Đặt sân ngay</button>
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="services">
         <div className="services-content">
-          <h2>Sân bóng LC</h2>
-          <p>Chuyên cung cấp dịch vụ bóng đá</p>
+          <div className="services-title">
+            <h2>Sân bóng LC</h2>
+            <p>Chuyên cung cấp dịch vụ bóng đá</p>
+          </div>
 
           <div className="services-container">
             <div className="image-container">
@@ -59,7 +67,11 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-              <button className="cta-button">Tham gia ngay</button>
+              <button className="cta-button">
+               <Link to={ROUTERS.USER.INFO}>
+                 Tham gia ngay
+                </Link>
+              </button>
             </div>
           </div>
         </div>

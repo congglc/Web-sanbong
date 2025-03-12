@@ -1,0 +1,170 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+.profile-container {
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.profile-card {
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  position: relative; /* Thêm để định vị nút X */
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: left;
+}
+
+.avatar-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+
+    .avatar-icon {
+      font-size: 3em;
+      color: #999;
+    }
+  }
+
+  .avatar-actions {
+    p {
+      margin-bottom: 5px;
+    }
+
+    button {
+      padding: 8px 15px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.2s;
+
+      &.upload-button {
+        background-color: #f0f0f0;
+        color: #555;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+
+      &.remove-button {
+        background-color: #f0f0f0;
+        color: #555;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    height: 120px;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+
+  button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &.cancel-button {
+      background-color: #f0f0f0;
+      color: #555;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+
+    &.confirm-button {
+      background-color: #4CAF50;
+      color: white;
+
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+}
+
+/* CSS cho nút thoát */
+.exit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+
+  &:hover {
+    color: darken(gray, 20%);
+  }
+}

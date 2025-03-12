@@ -1,0 +1,203 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+.field-booking-form-container {
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 60px;
+}
+
+.field-booking-form {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  position: relative; /* Thêm dòng này */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 8px 10px;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+
+  &.checkbox-label {
+    display: flex;
+    align-items: center;
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+      margin-top: 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+.contact-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-right: 10px;
+  overflow: hidden;
+
+  .phone-icon {
+    padding: 10px;
+    color: #777;
+  }
+
+  input[type="tel"] {
+    border: none;
+    flex-grow: 1;
+    padding: 10px;
+    outline: none;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &.cancel-button {
+      background-color: #f8f9fa;
+      color: #555;
+
+      &:hover {
+        background-color: #e2e6ea;
+      }
+    }
+
+    &.book-button {
+      background-color: #4caf50;
+      color: white;
+
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-size: 0.9em;
+}
+
+.react-datepicker__header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+.react-datepicker__navigation {
+  top: 1em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  cursor: pointer;
+
+  &--previous {
+    left: 1em;
+  }
+
+  &--next {
+    right: 1em;
+  }
+}
+
+.react-datepicker__day {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2.5em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #4caf50;
+    color: white;
+  }
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* CSS cho nút thoát */
+.exit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+
+  &:hover {
+    color: darken(gray, 20%);
+  }
+}

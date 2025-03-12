@@ -1,10 +1,15 @@
-import { memo } from "react";
+import { memo ,useEffect } from "react";
 import "./style.scss";
 import banner from "../../../assets/user/club/image.png";
 import club_1 from "../../../assets/user/club/club1.png";
 import club_2 from "../../../assets/user/club/club2.png";
+import { ROUTERS } from "utils/router";
+import { Link } from "react-router-dom";
 
 const Club = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []); 
   return (
     <div className="club-content">
       <div className="container">
@@ -13,7 +18,11 @@ const Club = () => {
             <h1>LC SOCCER CLUB</h1>
             <p>Liên tục tuyển thêm thành viên!</p>
             <div className="buttons">
-              <button className="btn primary">Tham gia ngay</button>
+              <button className="btn primary">
+                <Link to={ROUTERS.USER.INFO}>
+                 Tham gia ngay
+                </Link>
+              </button>
               <button className="btn secondary">Tìm hiểu thêm</button>
             </div>
             <img src={banner} alt="Huấn luyện bóng đá" className="training-image" />
@@ -55,7 +64,11 @@ const Club = () => {
               <div className="text">
                 <h3>Đào tạo các kĩ năng cơ bản</h3>
                 <p>Tất cả các lứa tuổi muốn bắt đầu với môn thể thao vua đều có thể tham gia.</p>
-                <button className="btn register">Đăng kí ngay</button>
+                <button className="btn register">
+                  <Link to={ROUTERS.USER.INFO}>
+                  Tham gia ngay
+                  </Link>
+                </button>
               </div>
               <img src={club_1} alt="Đào tạo kỹ năng cơ bản" />
             </div>
@@ -65,7 +78,11 @@ const Club = () => {
               <div className="text">
                 <h3>Tổ chức giao lưu thực chiến</h3>
                 <p>Sau mỗi buổi tập mọi người sẽ được thực hành trực tiếp thông qua những trận bóng giao hữu.</p>
-                <button className="btn register">Đăng kí ngay</button>
+                <button className="btn register">
+                  <Link to={ROUTERS.USER.INFO}>
+                  Tham gia ngay
+                  </Link>
+                </button>
               </div>
             </div>
           </div>

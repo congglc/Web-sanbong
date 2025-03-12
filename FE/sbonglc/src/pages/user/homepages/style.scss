@@ -36,6 +36,11 @@
                 h1 {
                     font-size: 2.25rem;
                     margin-bottom: 10px;
+                    color: #f0f0f0;
+                }
+
+                p{
+                  color: #f0f0f0;
                 }
             }
 
@@ -74,16 +79,34 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            
+            .services-title {
+                display: flex;
+               flex-direction: column;
+                justify-content: center ;
+                align-items: center ;
 
-            h2 {
+                h2 {
+                    font-size: 2rem;
+                    margin-bottom: 10px;
+                    
+                }
+    
+                p {
+                    font-size: 1.125rem;
+                    margin-bottom: 20px;
+                }h2 {
                 font-size: 2rem;
                 margin-bottom: 10px;
+                
             }
 
             p {
                 font-size: 1.125rem;
                 margin-bottom: 20px;
             }
+            }
+            
 
             .services-container {
                 display: flex;
@@ -127,6 +150,11 @@
                 border: none;
                 cursor: pointer;
                 border-radius: 5px;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
             }
         }
     }
@@ -143,7 +171,6 @@
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    word-break: break-word; /* Important: Prevents text overflow */
 
     &:hover {
         transform: translateY(-5px);
@@ -197,24 +224,14 @@
                 }
 
                 .services-wrapper {
-                    width: 100%;  /* Take full width */
-                    margin: 0 auto;  /* Center */
+                    width: 100%; /* Chiếm toàn bộ chiều rộng */
                 }
 
                 .service-list {
-                    width: 100%;         /* Ensure the list takes full width */
-                    grid-template-columns: 1fr;  /* One column */
-                    gap: 20px;            /* Adjust gap as needed */
+                    width: 100%;
+                    grid-template-columns: repeat(1, 1fr);
                 }
             }
         }
-    }
-
-    .service-item {
-        max-width: none;        /* Remove max width restrictions */
-        width: auto;            /* Allow content to determine width */
-        padding: 20px;          /* Some padding for spacing */
-        font-size: 1.1rem;      /* Optional: Adjust font size */
-        margin: 0 auto;         /* Center each item */
     }
 }

@@ -1,0 +1,166 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+$primary-color: #fff;
+$secondary-color: #000;
+$button-color: #5c6b77;
+$light-grey: #f0f2f5;
+
+// Styles for the full-page signup
+.signup-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #D9D9D9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; // add padding to the signup page
+}
+
+.signup-form {
+  background-color: $primary-color;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%; // Full width
+  max-width: 600px; // Optional: Limit the maximum width
+  margin: 0 auto; // Center horizontally
+  position: relative; /* Thêm để định vị nút X */
+}
+
+// Rest of the styles from the previous version remain the same
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: grey;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  color: $secondary-color;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: darken($secondary-color, 20%);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: darken($secondary-color, 10%);
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: $button-color;
+    }
+  }
+}
+
+.password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    flex-grow: 1;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 18px;
+  }
+}
+
+.terms-agreement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  label {
+    margin-left: 5px;
+    color: darken($secondary-color, 10%);
+    font-weight: normal;
+  }
+}
+
+.signup-button {
+  background-color: $button-color;
+  color: $primary-color;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+}
+
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+
+  a {
+    color: $button-color;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* CSS cho nút thoát */
+.exit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+
+  &:hover {
+    color: darken(gray, 20%);
+  }
+}

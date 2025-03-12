@@ -5,6 +5,11 @@ import MasterLayout from "./pages/user/theme/masterLayout";
 import Order from "./pages/user/order";
 import Club from "./pages/user/club";
 import Contact from "./pages/user/contact"
+import Signup from "pages/user/form/signup";
+import Signin from "pages/user/form/signin";
+import Payment from "pages/user/form/payment";
+import Profile from "pages/user/form/profile";
+import Info from "pages/user/form/information";
 const renderUserRouter = () => {
     const UserRouters= [
         {
@@ -22,6 +27,26 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.CONTACT,
             component: <Contact/>
+        },
+        {
+            path: ROUTERS.USER.SIGNUP,
+            component: <Signup/>
+        },
+        {
+            path: ROUTERS.USER.SIGNIN,
+            component: <Signin/>
+        },
+        {
+            path: ROUTERS.USER.PAYMENT,
+            component: <Payment/>
+        },
+        {
+            path: ROUTERS.USER.PROFILE,
+            component: <Profile/>
+        },
+        {
+            path: ROUTERS.USER.INFO,
+            component: <Info/>
         },
 
     ]
