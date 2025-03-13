@@ -1,0 +1,319 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+// Mixins
+@mixin button-style {
+  background-color: #fff; /* White background */
+  color: #2a4d38; /* Dark green text */
+  padding: 0.8rem 1.5rem; /* Responsive padding */
+  border: 1px solid #2a4d38; /* Dark green border */
+  border-radius: 0.5rem; /* Rounded corners */
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+
+  &:hover {
+    background-color: #2a4d38; /* Dark green background on hover */
+    color: #fff; /* White text on hover */
+  }
+}
+
+@mixin box-style {
+  background-color: #fff;
+  padding: 1.5rem; /* Responsive padding */
+  border-radius: 0.5rem; /* Responsive border-radius */
+  box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.1); /* Responsive box-shadow */
+}
+
+// Variables
+$container-width: 85%;
+$base-font-size: 1rem;
+$primary-text-color: #333; /* Dark Gray */
+$secondary-text-color: #666; /* Lighter Gray */
+$accent-color: #2a4d38; /* Dark Green */
+$background-color: #e3f0e7; /* Light Green background as per the image */
+$field-background-color: #f7f7f7;
+
+// Reset CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: $background-color;
+}
+
+// General styles
+.order-content {
+  padding-top: 6.4rem; /* Relative to base font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: $container-width;
+  text-align: center;
+}
+
+.heading-content {
+  margin-bottom: 1.2rem; /* Responsive margin */
+
+  .highlight-text {
+    font-size: 1.5rem; /* Responsive font size */
+    font-weight: bold;
+    color: $primary-text-color;
+  }
+
+  .sub-heading {
+    font-size: 1rem; /* Responsive font size */
+    color: $secondary-text-color;
+  }
+}
+
+.time-slots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  .time-slot-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    color: $accent-color;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Price row styles
+.price-section {
+  background-color: $background-color; // Use light green from the image
+  padding: 2rem 0; // Optional: Add padding for spacing
+  width: 100%;
+}
+
+.price-row {
+  display: flex;
+  justify-content: center;
+  gap: 3.75rem; /* Responsive gap */
+  margin-bottom: 1.9rem; /* Responsive margin */
+
+  .price-box {
+    background-color: #fff; /* White background */
+    padding: 2rem; /* Increased Padding */
+    border-radius: 0.5rem; /* Responsive border-radius */
+    text-align: center;
+    width: 32%; /* Slightly larger boxes */
+
+    h3 {
+      color: $primary-text-color;
+      font-size: 1.6rem; /* Larger H3 font size */
+      margin-bottom: 0; /* Removed margin from H3 */
+      display: flex; /* Use flexbox for alignment */
+      align-items: center; /* Vertically center items */
+      justify-content: center; /* Center the tag */
+    }
+
+    .time-description {
+      font-size: 0.9rem;
+      color: $secondary-text-color;
+    }
+
+    h2 {
+      color: $primary-text-color;
+      font-size: 1.75rem; /* Larger font size */
+      font-weight: bold;
+      margin: 0.5rem 0;
+
+      span {
+        font-size: 1rem; /* Size for "/ca" */
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0; /* Spacing above and below the list */
+
+      li {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 0.2rem 0;
+        color: $secondary-text-color;
+        display: flex;
+        align-items: center; /* Vertically align icon */
+        justify-content: center;
+
+        .info-icon {
+          margin-left: 0.3rem; /* Spacing after icon */
+          color: $secondary-text-color;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .extra-fee {
+      font-size: 0.9rem; /* Smaller font size */
+      color: $secondary-text-color;
+      margin-top: 1rem; /* Spacing above extra fee */
+
+      .info-icon {
+        margin-right: 0.3rem; /* Spacing before icon */
+        color: $secondary-text-color;
+        font-size: 0.8rem;
+      }
+    }
+
+    button {
+      @include button-style;
+      width: 100%; /* Full width button */
+      margin-top: 1.5rem; /* Spacing above the button */
+      background-color: #fff; /* White background */
+      color: $accent-color; /* Dark green text */
+      border: 1px solid $accent-color;
+      border-radius: 2rem; /* More rounded button */
+    }
+  }
+
+  .special {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+
+    h3 {
+      color: $accent-color;
+      font-size: 1.6rem; /* Larger font size for H3 */
+      display: inline-flex; /* Aligns the tag to center vertically */
+      align-items: center;
+      gap: 0.5rem; /* Spacing between h3 and the tag */
+    }
+
+    button {
+      background-color: $accent-color;
+      color: #fff; /* White text */
+    }
+
+    .new-tag {
+      background: $accent-color; /* Dark Green */
+      color: white;
+      padding: 0.2rem 0.4rem; /* Responsive padding */
+      border-radius: 0.25rem; /* Responsive border-radius */
+      font-size: 0.75rem; /* Responsive font size */
+      position: static; /* Removes the absolute positioning */
+      transform: none; /* Removes the transform */
+    }
+  }
+}
+
+.field-section {
+  background-color: $field-background-color; // Use a variable for the background
+  padding: 2rem 0; // Optional: Add padding for spacing
+  border: 2px solid #ccc;  // Added border. Adjust color and width as desired.
+  border-radius: 10px;
+}
+
+// Field row styles
+.field-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 2.5rem; /* Responsive gap */
+  padding-top: 3.1rem; /* Responsive padding */
+  padding-bottom: 3.1rem; /* Responsive padding */
+
+  .field-box {
+    @include box-style;
+    width: calc(33% - 2.5rem * 2 / 3); /* Adjust width based on gap */
+    text-align: left;
+    margin-bottom: 1.5rem; /* Optional: Add some space below each box */
+
+    img {
+      width: 100%;
+      height: 20rem;
+      border-radius: 0.5rem; /* Responsive border-radius */
+      object-fit: cover;
+    }
+
+    h4 {
+      font-size: 1.1rem; /* Responsive font size */
+      margin: 0.6rem 0; /* Responsive margin */
+      color: $primary-text-color;
+    }
+
+    p {
+      font-size: 0.875rem; /* Responsive font size */
+      color: $secondary-text-color;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: left;
+      margin-top: 0.6rem; /* Responsive margin */
+      font-size: 0.875rem; /* Responsive font size */
+      font-weight: bold;
+      gap: 0.6rem; /* Responsive gap */
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 768px) {
+  .price-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .price-box {
+      width: 90%;
+    }
+
+    .special {
+      width: 90%; /* Full width on small screens */
+    }
+  }
+
+  .field-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .field-box {
+      width: 90%;
+    }
+
+    img {
+      height: 15rem !important;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .price-row {
+    gap: 2rem;
+
+    .price-box {
+      width: 45%;
+    }
+
+    .special {
+      width: 40%; /* Smaller on medium screens */
+    }
+  }
+
+  .field-row {
+    flex-direction: row; /* back to row */
+    flex-wrap: wrap; /* wrap as needed */
+    justify-content: space-around; /* Distribute space */
+    gap: 2rem;
+
+    .field-box {
+      width: calc(50% - 1rem); /* Half width, subtract gap */
+    }
+  }
+}
