@@ -3,7 +3,7 @@ import Footer from "../footer";
 import Header from "../header";
 
 
-const MasterLayout = ({ children, ...props }) => {
+const MasterUserLayout = ({ children, ...props }) => {
     const location = useLocation();
     const isSignInPage = location.pathname === "/dang-nhap";
     const isSignUpPage = location.pathname === "/dang-ky-tai-khoan";
@@ -19,4 +19,4 @@ const MasterLayout = ({ children, ...props }) => {
         </div>
     )
 }
-export default MasterLayout
+export default MasterUserLayout

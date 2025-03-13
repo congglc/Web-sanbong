@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import { ROUTERS } from "./utils/router";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { ADMIN_PATH, ROUTERS } from "./utils/router";
 import HomePage from "./pages/user/homepages"
-import MasterLayout from "./pages/user/theme/masterLayout";
+import MasterUserLayout from "./pages/user/theme/masterLayout";
 import Order from "./pages/user/order";
 import Club from "./pages/user/club";
 import Contact from "./pages/user/contact"
@@ -10,6 +10,17 @@ import Signin from "pages/user/form/signin";
 import Payment from "pages/user/form/payment";
 import Profile from "pages/user/form/profile";
 import Info from "pages/user/form/information";
+import MasterAdminLayout from "pages/admin/theme/masterLayout";
+
+import Login from "pages/admin/login"
+import Dashboard from "pages/admin/dashboard"
+import AddField from "pages/admin/add-field"
+import FieldStatus from "pages/admin/field-status"
+import ClubApplications from "pages/admin/club-applications"
+
+
+
+
 const renderUserRouter = () => {
     const UserRouters= [
         {
@@ -51,7 +62,7 @@ const renderUserRouter = () => {
 
     ]
     return (
-        <MasterLayout>
+        <MasterUserLayout>
             <Routes>
                 {
                     UserRouters.map((item, key)=>(
@@ -59,12 +70,53 @@ const renderUserRouter = () => {
                     ))
                 }
             </Routes>
-        </MasterLayout>
+        </MasterUserLayout>
+    )
+}
+
+const renderAdminRouter = () => {
+    const AdminRouters= [
+        {
+            path: ROUTERS.ADMIN.LOGIN,
+            component: <Login />,
+          },
+          {
+            path: ROUTERS.ADMIN.DASHBOARD,
+            component: <Dashboard />,
+          },
+          {
+            path: ROUTERS.ADMIN.ADD_FIELD,
+            component: <AddField />,
+          },
+          {
+            path: ROUTERS.ADMIN.FIELD_STATUS,
+            component: <FieldStatus />,
+          },
+          {
+            path: ROUTERS.ADMIN.CLUB_APPLICATIONS,
+            component: <ClubApplications />,
+          },
+          
+        
+    ]
+    return (
+        <MasterAdminLayout>
+            <Routes>
+                {
+                    AdminRouters.map((item, key)=>(
+                        <Route key={key} path={item.path} element={item.component}/>
+                    ))
+                }
+            </Routes>
+        </MasterAdminLayout>
     )
 }
 
 const RouterCustom = () => {
-    return renderUserRouter();
+    const location= useLocation();
+    const isAdminRouter = location.pathname.startsWith(ADMIN_PATH);
+
+    return isAdminRouter ? renderAdminRouter() : renderUserRouter();
 };
 
 export default RouterCustom;

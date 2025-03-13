@@ -74,6 +74,7 @@ const Payment = () => {
   const handleCheckboxChange = (event) => {
     setConfirmed(event.target.checked);
   };
+  
 
   const handleExitClick = () => {
     navigate(-1); // Quay lại trang trước

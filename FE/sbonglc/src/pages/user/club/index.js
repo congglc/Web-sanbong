@@ -63,7 +63,12 @@ const Club = () => {
             <div className="training-item">
               <div className="text">
                 <h3>Đào tạo các kĩ năng cơ bản</h3>
-                <p>Tất cả các lứa tuổi muốn bắt đầu với môn thể thao vua đều có thể tham gia.</p>
+                <ul>
+                  <li>Kiểm soát bóng: Bài tập đỡ bóng bằng chân, đùi, ngực.</li>
+                  <li>Dẫn bóng (Dribbling): Luyện tập rê bóng với cả hai chân, đổi hướng nhanh.</li>
+                  <li>Chuyền bóng (Passing): Chuyền sệt, chọc khe, chuyền bổng.</li>
+                  <li>Dứt điểm (Finishing): Sút bóng bằng mu bàn chân, lòng trong, má ngoài.</li>
+                </ul>
                 <button className="btn register">
                   <Link to={ROUTERS.USER.INFO}>
                   Tham gia ngay
@@ -77,7 +82,12 @@ const Club = () => {
               <img src={club_2} alt="Tổ chức giao lưu thực chiến" />
               <div className="text">
                 <h3>Tổ chức giao lưu thực chiến</h3>
-                <p>Sau mỗi buổi tập mọi người sẽ được thực hành trực tiếp thông qua những trận bóng giao hữu.</p>
+                <ul>
+                  <li>Sau mỗi buổi tập mọi người sẽ được thực hành trực tiếp thông qua những trận bóng giao hữu.</li>
+                  <li>Giao lưu giữa các đội bóng phong trào</li>
+                  <li>Giải đấu giao lưu mini</li>
+                  <li>Thử thách bóng đá đối kháng</li>
+                </ul>
                 <button className="btn register">
                   <Link to={ROUTERS.USER.INFO}>
                   Tham gia ngay

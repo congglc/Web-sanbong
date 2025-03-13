@@ -1,3 +1,6 @@
+
+export const ADMIN_PATH ="/quan-tri"
+
 export const ROUTERS = {
     USER: {
         HOME: "/",
@@ -10,4 +13,14 @@ export const ROUTERS = {
         PROFILE : "/thong-tin-ca-nhan",
         INFO : "/dang-ky-club"
     },
+
+    ADMIN: {
+        LOGIN: `${ADMIN_PATH}/dang-nhap`,
+        DASHBOARD: `${ADMIN_PATH}/dashboard`,
+        ORDER: `${ADMIN_PATH}/trang-thai-don`,
+        ADD_FIELD: `${ADMIN_PATH}/them-san-bong`,
+        FIELD_STATUS: `${ADMIN_PATH}/trang-thai-san`,
+        CLUB_APPLICATIONS: `${ADMIN_PATH}/don-dang-ky-clb`,
+        STATISTICS: `${ADMIN_PATH}/thong-ke`,
+    }
 };
