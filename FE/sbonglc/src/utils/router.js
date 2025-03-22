@@ -20,6 +20,7 @@ export const ROUTERS = {
     ADD_FIELD: `${ADMIN_PATH}/them-san-bong`,
     FIELD_STATUS: `${ADMIN_PATH}/trang-thai-san`,
     CLUB_APPLICATIONS: `${ADMIN_PATH}/don-dang-ky-clb`,
+    USERS: `${ADMIN_PATH}/quan-ly-nguoi-dung`,
   },
 }
 

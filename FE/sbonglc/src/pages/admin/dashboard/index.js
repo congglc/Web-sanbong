@@ -3,7 +3,7 @@
 import { memo, useState, useEffect } from "react"
 import "./style.scss"
 import AdminSidebar from "../components/Sidebar"
-import { FaUsers, FaFutbol, FaCalendarAlt, FaClipboardList } from "react-icons/fa"
+import { FaUsers, FaFutbol, FaCalendarAlt, FaClipboardList, FaUserFriends } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { ROUTERS } from "utils/router"
 
@@ -13,6 +13,7 @@ const Dashboard = () => {
     pendingBookings: 0,
     clubApplications: 0,
     todayBookings: 0,
+    totalUsers: 0,
   })
 
   const [recentBookings, setRecentBookings] = useState([])
@@ -21,10 +22,11 @@ const Dashboard = () => {
   useEffect(() => {
     // Trong thực tế, dữ liệu này sẽ được lấy từ API
     setStats({
-      totalFields: 5,
+      totalFields: 3,
       pendingBookings: 8,
       clubApplications: 3,
       todayBookings: 12,
+      totalUsers: 5, // Thêm số lượng người dùng
     })
 
     const mockRecentBookings = [
@@ -157,6 +159,19 @@ const Dashboard = () => {
             </div>
             <Link to={ROUTERS.ADMIN.FIELD_STATUS} className="stat-link">
               Xem lịch
+            </Link>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">
+              <FaUserFriends />
+            </div>
+            <div className="stat-content">
+              <h3>Tổng số người dùng</h3>
+              <p>{stats.totalUsers}</p>
+            </div>
+            <Link to={ROUTERS.ADMIN.USERS} className="stat-link">
+              Quản lý
             </Link>
           </div>
         </div>

@@ -81,14 +81,11 @@
           border-color: #4a90e2;
           box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
         }
-      }
+      } 
       
       .password-input {
         position: relative;
-        
-        input {
-          padding-right: 40px;
-        }
+
         
         .toggle-password {
           position: absolute;
@@ -132,12 +129,19 @@
       font-size: 16px;
       font-weight: 500;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.3s;
+      margin-top: 20px;
       
       &:hover {
         background-color: #3a7bc8;
       }
+      
+      &:active {
+        background-color: #2a6db8;
+      }
     }
+    
+    
   
     .login-link {
       text-align: center;
@@ -208,11 +212,7 @@
     }
     
     .password-input {
-      position: relative;
-      
-      input {
-        padding-right: 40px;
-      }
+      position: relative;S
       
       .toggle-password {
         position: absolute;

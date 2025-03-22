@@ -4,7 +4,16 @@ import { memo, useState } from "react"
 import "./Sidebar.scss"
 import { Link, useLocation } from "react-router-dom"
 import { ROUTERS } from "utils/router"
-import { FaHome, FaCalendarAlt, FaUsers, FaFutbol, FaClipboardList, FaSignOutAlt, FaBars } from "react-icons/fa"
+import {
+  FaHome,
+  FaCalendarAlt,
+  FaUsers,
+  FaFutbol,
+  FaClipboardList,
+  FaSignOutAlt,
+  FaBars,
+  FaUserFriends,
+} from "react-icons/fa"
 
 const AdminSidebar = () => {
   const location = useLocation()
@@ -35,6 +44,11 @@ const AdminSidebar = () => {
       name: "Đơn đặt sân",
       path: ROUTERS.ADMIN.ORDER,
       icon: <FaClipboardList />,
+    },
+    {
+      name: "Quản lý người dùng",
+      path: ROUTERS.ADMIN.USERS,
+      icon: <FaUserFriends />,
     },
   ]
 

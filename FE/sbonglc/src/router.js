@@ -18,6 +18,7 @@ import AddField from "pages/admin/add-field"
 import FieldStatus from "pages/admin/field-status"
 import ClubApplications from "pages/admin/club-applications"
 import OrderManagement from "pages/admin/order"
+import UserManagement from "pages/admin/users"
 
 const renderUserRouter = () => {
   const UserRouters = [
@@ -95,7 +96,11 @@ const renderAdminRouter = () => {
     {
         path: ROUTERS.ADMIN.ORDER,
         component: <OrderManagement />,
-      },
+    },
+    {
+      path: ROUTERS.ADMIN.USERS,
+      component: <UserManagement />,
+    },
   ]
   return (
     <MasterAdminLayout>

@@ -35,6 +35,10 @@
         &.primary {
           background-color: #4a90e2;
           color: white;
+
+          a {
+            text-decoration: none;
+          }
           
           &:hover {
             background-color: #3a7bc8;
@@ -197,6 +201,10 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
+
+            a {
+              text-decoration: none;
+            }
             
             &:hover {
               background-color: #3a7bc8;

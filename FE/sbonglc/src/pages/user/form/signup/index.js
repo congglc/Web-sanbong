@@ -3,9 +3,8 @@
 import { memo, useState } from "react"
 import "./style.scss"
 import { ROUTERS } from "utils/router"
-import { Link, useNavigate } from "react-router-dom" // Import useNavigate
-
-import { MdOutlineDisabledByDefault } from "react-icons/md" // Import icon
+import { useNavigate } from "react-router-dom" // Import useNavigate
+import { FaTimes } from "react-icons/fa"
 
 const Signup = () => {
   const [passwordVisible, setPasswordVisible] = useState(false)
@@ -23,7 +22,7 @@ const Signup = () => {
     <div className="signup-page">
       <div className="signup-form">
         <button className="exit-button" onClick={handleExitClick}>
-          <MdOutlineDisabledByDefault />
+          <FaTimes />
         </button>
         <h1>Welcome.</h1>
         <p>Tạo một tài khoản.</p>
@@ -53,8 +52,8 @@ const Signup = () => {
             <label htmlFor="terms">Tôi đồng í với điều khoản</label>
           </div>
 
-          <button type="submit" className="signup-button">
-            <Link to={ROUTERS.USER.PROFILE}>Đăng kí</Link>
+          <button type="button" className="signup-button" onClick={() => navigate(ROUTERS.USER.INFO)}>
+            Đăng kí
           </button>
         </form>
 

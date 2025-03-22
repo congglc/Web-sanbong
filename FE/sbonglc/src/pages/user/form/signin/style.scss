@@ -19,16 +19,13 @@
   .exit-button {
     position: absolute;
     top: 15px;
-    left: 15px;
+    right: 15px;
     background: none;
     border: none;
     font-size: 16px;
     cursor: pointer;
     color: #666;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: auto;
     
     &:hover {
       color: #333;
@@ -40,6 +37,15 @@
     font-size: 28px;
     margin-bottom: 30px;
     color: #333;
+  }
+
+  .error-message {
+    background-color: #ffeaea;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
   }
 
   .form-group {
@@ -58,6 +64,7 @@
       border: 1px solid #ddd;
       border-radius: 4px;
       font-size: 14px;
+      box-sizing: border-box;
       
       &:focus {
         outline: none;
@@ -65,33 +72,36 @@
         box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
       }
     }
+  }
+  
+  .password-input {
+    position: relative;
     
-    .password-input {
-      position: relative;
+    input {
+      padding-right: 40px;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      bottom: 10px; // Đặt ở cuối ô input thay vì ở giữa
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
       
-      input {
-        padding-right: 40px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-      
-      .toggle-password {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        color: #666;
-        cursor: pointer;
-        padding: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        &:hover {
-          color: #333;
-        }
+      &:hover {
+        color: #333;
       }
     }
   }
@@ -142,16 +152,6 @@
         text-decoration: underline;
       }
     }
-  }
-
-  // Thêm style cho thông báo lỗi
-  .error-message {
-    background-color: #ffeaea;
-    color: #c62828;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    font-size: 14px;
   }
 }
 

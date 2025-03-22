@@ -168,7 +168,7 @@ const AddField = () => {
     e.preventDefault()
 
     if (editingField) {
-      // Cập nhật sân bóng đã tồn tại
+      // Cập nhật sân bóng ��ã tồn tại
       const updatedFields = fields.map((field) => {
         if (field.id === editingField) {
           return {
