@@ -11,6 +11,8 @@ export const ROUTERS = {
     PAYMENT: "/thanh-toan",
     PROFILE: "/thong-tin-ca-nhan",
     INFO: "/dang-ky-club",
+    MY_BOOKINGS: "/don-dat-san",
+    MY_CLUB_APPLICATIONS: "/don-dang-ky-clb",
   },
 
   ADMIN: {

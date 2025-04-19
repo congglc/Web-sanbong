@@ -11,6 +11,8 @@ import Payment from "pages/user/form/payment"
 import Profile from "pages/user/form/profile"
 import Info from "pages/user/form/information"
 import MasterAdminLayout from "pages/admin/theme/masterLayout"
+import MyBookings from "pages/user/my-bookings"
+import MyClubApplications from "pages/user/my-club-applications"
 
 import Login from "pages/admin/login"
 import Dashboard from "pages/admin/dashboard"
@@ -58,6 +60,14 @@ const renderUserRouter = () => {
       path: ROUTERS.USER.INFO,
       component: <Info />,
     },
+    {
+      path: ROUTERS.USER.MY_BOOKINGS,
+      component: <MyBookings />,
+    },
+    {
+      path: ROUTERS.USER.MY_CLUB_APPLICATIONS,
+      component: <MyClubApplications />,
+    },
   ]
   return (
     <MasterUserLayout>
@@ -94,8 +104,8 @@ const renderAdminRouter = () => {
       component: <ClubApplications />,
     },
     {
-        path: ROUTERS.ADMIN.ORDER,
-        component: <OrderManagement />,
+      path: ROUTERS.ADMIN.ORDER,
+      component: <OrderManagement />,
     },
     {
       path: ROUTERS.ADMIN.USERS,
