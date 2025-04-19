@@ -99,6 +99,12 @@ const Header = () => {
                       <Link to={ROUTERS.USER.PROFILE} className="dropdown-item">
                         Thông tin cá nhân
                       </Link>
+                      <Link to="/don-dat-san" className="dropdown-item">
+                        Đơn đặt sân của tôi
+                      </Link>
+                      <Link to="/don-dang-ky-clb" className="dropdown-item">
+                        Đơn đăng ký CLB
+                      </Link>
                       <button className="dropdown-item logout-button" onClick={handleLogout}>
                         Đăng xuất
                       </button>
