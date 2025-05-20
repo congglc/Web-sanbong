@@ -15,6 +15,18 @@ const router = express.Router()
 router.get("/", authenticate, authorize(constants.roles.ADMIN), userController.getUsers)
 
 /**
+ * @route GET /api/users/search
+ * @desc Get user by email or phone
+ * @access Private (Admin/Manager)
+ */
+router.get(
+  "/search",
+  authenticate,
+  authorize(constants.roles.ADMIN, constants.roles.MANAGER),
+  userController.getUserByEmailOrPhone,
+)
+
+/**
  * @route GET /api/users/:userId
  * @desc Get user by ID
  * @access Private

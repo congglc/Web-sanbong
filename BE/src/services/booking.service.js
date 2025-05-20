@@ -6,10 +6,21 @@ const { ObjectId } = require("mongodb")
 /**
  * Get all bookings
  * @param {Object} filter - Filter criteria
+ * @param {number} limit - Maximum number of results
+ * @param {number} skip - Number of documents to skip
  * @returns {Promise<Array>} List of bookings
  */
-const getBookings = async (filter = {}) => {
-  return bookingModel.getBookings(filter)
+const getBookings = async (filter = {}, limit = 10, skip = 0) => {
+  return bookingModel.getBookings(filter, limit, skip)
+}
+
+/**
+ * Count bookings based on filter
+ * @param {Object} filter - Filter criteria
+ * @returns {Promise<number>} Count of bookings
+ */
+const countBookings = async (filter = {}) => {
+  return bookingModel.countBookings(filter)
 }
 
 /**
@@ -24,10 +35,15 @@ const getBookingById = async (id) => {
 /**
  * Get bookings by user ID
  * @param {string} userId - User ID
+ * @param {number} limit - Maximum number of results
+ * @param {number} skip - Number of documents to skip
+ * @param {string} status - Booking status
  * @returns {Promise<Array>} List of bookings
  */
-const getBookingsByUser = async (userId) => {
-  return bookingModel.getBookingsByUser(userId)
+const getBookingsByUser = async (userId, limit = 10, skip = 0, status = null) => {
+  const filter = { userId: new ObjectId(userId) }
+  if (status) filter.status = status
+  return bookingModel.getBookings(filter, limit, skip)
 }
 
 /**
@@ -155,6 +171,7 @@ const deleteBooking = async (id) => {
 
 module.exports = {
   getBookings,
+  countBookings,
   getBookingById,
   getBookingsByUser,
   createBooking,
