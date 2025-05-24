@@ -120,6 +120,23 @@ const deleteUser = async (req, res, next) => {
   }
 }
 
+/**
+ * Upload user avatar
+ * @route PUT /api/users/:userId/avatar
+ */
+const uploadAvatar = async (req, res, next) => {
+  try {
+    if (!req.file) {
+      return apiResponse(res, 400, "No file uploaded")
+    }
+    const avatarUrl = require("../config/upload").getUserAvatarUrl(req.file.filename)
+    const user = await userService.updateUser(req.params.userId, { avatar: avatarUrl })
+    return apiResponse(res, 200, "Avatar uploaded successfully", { user })
+  } catch (error) {
+    next(error)
+  }
+}
+
 module.exports = {
   getUsers,
   getUserById,
@@ -127,4 +144,5 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
+  uploadAvatar,
 }

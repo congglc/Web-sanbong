@@ -109,7 +109,7 @@ const updateUser = async (id, updateData) => {
     { returnDocument: "after" },
   )
 
-  return result
+  return result.value
 }
 
 /**

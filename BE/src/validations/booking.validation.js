@@ -33,14 +33,14 @@ query: Joi.object()
 const createBooking = {
 body: Joi.object().keys({
     teamName: Joi.string().required(),
-    teamLeaderName: Joi.string().required(),
-    contact: Joi.string().required(),
+    teamLeaderName: Joi.string().allow("").required(),
+    contact: Joi.string().allow("").required(),
     fieldId: Joi.string().custom(objectId).required(),
     fieldName: Joi.string().required(),
     date: Joi.date().required(),
     time: Joi.string().required(),
     price: Joi.number().required(),
-    notes: Joi.string(),
+    notes: Joi.string().allow(""),
     userId: Joi.string().custom(objectId).required(),
 }),
 }

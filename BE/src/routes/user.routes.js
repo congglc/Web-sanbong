@@ -4,6 +4,7 @@ const { authenticate, authorize } = require("../middlewares/auth.middleware")
 const validate = require("../middlewares/validate.middleware")
 const userValidation = require("../validations/user.validation")
 const constants = require("../config/constants")
+const { uploadUserAvatar } = require("../config/upload")
 
 const router = express.Router()
 
@@ -64,6 +65,18 @@ router.delete(
   authorize(constants.roles.ADMIN),
   validate(userValidation.deleteUser),
   userController.deleteUser,
+)
+
+/**
+ * @route PUT /api/users/:userId/avatar
+ * @desc Upload user avatar
+ * @access Private (chủ tài khoản hoặc admin)
+ */
+router.put(
+  "/:userId/avatar",
+  authenticate,
+  uploadUserAvatar.single("avatar"),
+  userController.uploadAvatar,
 )
 
 module.exports = router
